@@ -6,6 +6,8 @@ randomSystem (ZZ,ZZ,Ring) := (n,d,kk) -> (
      apply(n, i->sum(toList(1..d),j->random(j,R)) - 1)
      )
 
+beginDocumentation()
+
 doc ///
     Key
     	randomSystem
@@ -33,9 +35,6 @@ doc ///
 
 TEST ///
 F = randomSystem(5,2,CC_53)
-assert(
-    first timing (sols = solveSystem F;)
-    < 1
-    )
+sols = solveSystem F
 assert(#sols==32)
 ///

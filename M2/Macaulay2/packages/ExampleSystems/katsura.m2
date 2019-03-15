@@ -15,6 +15,8 @@ katsura (ZZ,Ring) := (n,kk) -> (
 	     ))
      )
 
+beginDocumentation()
+
 doc /// 
     Key
     	katsura
@@ -34,9 +36,6 @@ doc ///
 
 TEST ///
 F = katsura(10,QQ)
-assert(
-    first timing (sols = solveSystem F;) 
-    < 10
-    )
+sols = solveSystem F
 assert(#sols==512)
 ///

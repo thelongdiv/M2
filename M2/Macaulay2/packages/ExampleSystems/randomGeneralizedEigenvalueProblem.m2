@@ -13,6 +13,8 @@ randomGeneralizedEigenvalueProblem ZZ := n -> (
      (T,S,solsS)
      )
 
+beginDocumentation()
+
 doc ///
     Key
     	randomGeneralizedEigenvalueProblem
@@ -46,9 +48,6 @@ doc ///
 
 TEST ///
 F = first randomGeneralizedEigenvalueProblem 5
-assert(
-    first timing (sols = solveSystem F;)
-    < 1
-    )
+sols = solveSystem F
 assert(#sols==5)
 ///
